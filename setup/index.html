@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WebVR Content Kit: Setup</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<h1>WebVR Content Kit</h1>
+<h2>Setup instructions for the Mozilla VR Kit</h2>
+
+<p>If you want to demo the WebVR technology with the available demos and have the hardware for it, here are the instructions you need to follow to do it yourself.</p>
+
+<h2>Starting the demoing</h2>
+
+<p>If everything is set up, just start the demo sessions.</li>
+
+<ul>
+	<li>Plug in Oculus Rift, its positional tracker, and Leap Motion</li>
+	<li>Open <em>StartWebVRDemos</em> script from desktop</li>
+ 	<li>Open <em>Nightly</em> app from desktop</li>
+ 	<li>Open <em>VR Demos</em> bookmark from Nightly (or navigate to localhost:8080)</li>
+ 	<li>Open <em>OBS Multiplatform</em> app from desktop (to run screen mirroring software and see what people are seeing)</li>
+</ul>
+
+<h2>Single session</h2>
+
+<p>Demoing steps for a single person.</p>
+
+<ul>
+	<li>Invite the person to sit comfortably in front of the laptop</li>
+	<li>Give them the headset, so they can put it on their head on their own (ask to put out the glasses if they can to have more comfort, but should work with them too)</li>
+	<li>Wait till they sit still to reset the sensor (all they see is black screen, so you can say out loud that you are resetting it and launching the demo)</li>
+	<li>Launch the demo, make it fullscreen</li>
+	<li>Explain what's happening.
+		<ul>
+			<li>Sechelt: it's a landscape render in which they can look around in any direction (there are no interactions and the path is fixed)</li>
+			<li>Polar Sea: works similar to the previous one, it's a set of 360 videos (you can emphasize that they can look around and see what's happening behind them)</li>
+			<li>Rainbow Membrane: this one uses Leap Motion, so when it's launched explain that they can put both hands in front of them and play around with the face and all the surfaces</li>
+		</ul>
+	</li>
+	<li>Repeat for the demos you want to show. For me showing the demos listed above in that particular order work best. Turn off the first demo when they reach the island. Say that the second one is long and they can let you know when they want to see the third one (some people only need a few seconds while others are amazed for longer). The third one is exciting for a minute or two and after they finished they can just put off the headset.</li>
+	<li>That's it - answer any questions, invite another person</li>
+</ul>
+
+<h2>Demoing tips and best practices</h2>
+
+<p>Learn how to do the demoing nice and smooth.</p>
+
+<ul>
+	<li>Try to keep demo lengths to under 5 minutes. We don't need to show every demo to each person. As you demo you'll get a sense of which demos people like the most (eg Rainbow Membrane, Polar Sea).</li>
+	<li>Demoer will need to switch demos for the user, eg: open site, double click to enter fullscreen, watch demo, press escape to exit fullscreen, press back, select new site. The user will see black while this is happening so it's a good idea to do the switching as fast as possible.</li>
+	<li>Wipe the lenses between demos</li>
+	<li>Restart Firefox to clear memory-related performance problems</li>
+	<li>Reset sensor when users put on the headset: press the Reset sensor button on the demo landing page. This will reset the global forward position of the HMD.</li>
+	<li>Head phones are awkward, but important: not all demos have audio, and headphones add yet another cable to deal with. Headphones also make it difficult for the demoer to narrate for the user. But audio enhances immersion and enjoyment tremendously. We should use headphones for the demos.</li>
+	<li>If something isn't working:
+		<ul>
+			<li>Unplug Rift and Leap — close Firefox — close server</li>
+			<li>Plugin Rift and Leap — start server — open Firefox</li>
+		</ul>
+	</li>
+	<li>If Rift loses sync, you can also try restart the Rift server: from Settings Tray, select the Rift icon (looks like a small black eye), select Rift Configuration Utility from the two available options. In the utility that opens, select Tools - Service - Restart, and confirm the dialogue that pops up. This effectively restarts the Rift software, and can sometimes resolve Rift tracking failures.</li>
+</ul>
+
+<h2>Setup WebVR from scratch</h2>
+
+<p>If your laptop was wiped out clean or when you want to setup everything from scratch on a new one.</p>
+
+<ul>
+	<li>Download and install <a href="https://developer.oculus.com/downloads/pc/0.6.0.1-beta/Oculus_Runtime_for_Windows/">Oculus runtime</a> (0.6.0.1-beta)</li>
+	<li>Download and install <a href="https://developer.leapmotion.com/downloads">Leap Motion SDK</a> (latest)</li>
+	<li>Download and install <a href="http://nightly.mozilla.org/">Firefox Nightly</a> (latest) and <a href="https://addons.mozilla.org/en-US/firefox/addon/mozilla-webvr-enabler/">WebVR enabler add-on</a> (0.2.0)</li>
+	<li>Download and install <a href="https://obsproject.com/download">Open Broadcaster Software Multiplatform</a> (latest)</li>
+	<li>Plug in Oculus Rift, its positional tracker, and Leap Motion</li>
+	<li>Monitor configuration. Go to Display settings - Screen resolution, select Oculus Rift and set the Orientation to Landscape (flipped). Then set Multiple displays to Extend these displays. Go to the Advanced settings - Monitor - Monitor settings and set the screen refresh rate to 60Hz.</li>
+	<li>Graphics card configuration. For computers with multiple GPUs: make sure we're always working from the discrete GPU. For NVIDIA GPUs, this can be set by accessing NVIDIA Control Panel via right-click on desktop. And setting Manage 3D Settings - Global settings - Preferred graphics processor - High-performance NVIDIA processor. This may need to be done from admin account for the setting to work.</li>
+	<li>Set <a href="http://mozvr.com/">MozVR.com</a> website as the default homepage</li>
+	<li>Show bookmarks toolbar and drag demos we want into the toolbar</li>
+</ul>
+
+<h2>Setup offline demos from scratch</h2>
+
+<p>Offline-friendly demos load faster and don't need Internet connection to work.</p>
+
+<ul>
+	<li>Download and install <a href="https://github.com/git-for-windows/git/releases/latest">git</a></li>
+	<li>Download and install <a href="https://nodejs.org/download/">node</a> (comes along with npm)</li>
+	<li>Download and unzip <a href="https://github.com/MozVR/webvr-demos/archive/master.zip">WebVR-Demos</a> from the GitHub repository</li>
+	<li>Open Git Bash and CD to webvr-demos directory</li>
+	<li>Install dependencies with `npm install`</li>
+	<li>Run local web server with `npm start`</li>
+	<li>Navigate to server in Firefox Nightly http://localhost:8080</li>
+	<li>You're ready! Enter VR mode on demos</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+
+<p>If someone ask a question during demoing, the answer will probably be here. If not, then fork this page on GitHub and add it, so we can try and answer it.</p>
+
+<dl>
+	<dt>Why do I need an Oculus Rift? Will you add support for other headsets?</dt>
+	<dd>The Oculus Rift DK2 is currently the best-supported headset for WebVR development. Limited support for mobile browsers is possible with <a href="https://github.com/borismus/webvr-boilerplate">WebVR Boilerplate</a>, but the Rift has greater capabilities (eg positional tracking), better performance, etc. Support for other headsets like the HTC Vive is coming soon.</dd>
+	<dt>Is there a WebVR spec?</dt>
+	<dd>Yes. A draft of the spec is available <a href="http://mozvr.github.io/webvr-spec/webvr.html">here</a>.</dd>
+	<dt>Can I build CSS VR websites?</dt>
+	<dd>We are working on enabling CSS VR websites in future builds of Firefox. Currently Firefox supports WebGL VR sites only.</dd>
+	<dt>What do I need to get started?</dt>
+	<dd>Grab Firefox Nightly and the WebVR Add-On from <a href="http://mozvr.com/">MozVR.com</a>!</dd>
+	<dt>Is Mozilla planning on building a dedicated VR browser?</dt>
+	<dd>We're always creating new VR experiments, especially for basic interactions like entering URLs, loading pages, etc. Currently the best way to experience WebVR is with a desktop browser like Firefox.</dd>
+	<dt>Why do I need an add-on?</dt>
+	<dd>The WebVR Add-On enables WebVR and disables multiprocess browsing (E10S), a new feature which is currently incompatible with WebVR. Once you have installed Firefox Nightly, open it, install the Add-On, and then follow the prompt to restart the browser.</dd>
+	<dt>Can I build my own sites?</dt>
+	<dd>Yes! And it's tons of fun. Start by grabbing some of the various boilerplate examples available: <a href="https://github.com/borismus/webvr-boilerplate/">WebVR Boilerplate</a> or <a href="https://github.com/povdocs/webvr-starter-kit">WebVR Starter Kit</a>.</dd>
+	<dt>The demos run slow or choppy for me. How can I improve performance?</dt>
+	<dd>See the VR setup tips on <a href="http://mozvr.com/">MozVR.com</a>. VR is a very new technology, and a few settings can make the difference between a smooth or choppy experience.</dd>
+	<dt>Why do I need Firefox Nightly? Can I use standard desktop Firefox?</dt>
+	<dd>VR web support is very new, and we want to test it thoroughly before we ship to all Firefox users. Our intention is to ship VR support in standard desktop Firefox as soon as it's ready.</dd>
+	<dt>Can I use Firefox for Android?</dt>
+	<dd>Yes, Nightly builds of Firefox for Android now support WebVR. The current implementation is rough and will evolve over time. Feedback is welcome!</dd>
+	<dt>Can I use other browsers?</dt>
+	<dd>Yes, in addition to VR-enabled Firefox, <a href="http://mozvr.com/">MozVR.com</a> also works with experimental VR-enabled builds of Chromium being created by Brandon Jones of the Chrome team. No other browsers currently support WebVR, but we're hopeful that they will start experimenting as well.</dd>
+</dl>
+
+<h2>TODO</h2>
+<ul>
+	<li>Instructions on setting up the 360 camera</li>
+	<li>Demos home page should look better</li>
+	<li>Health and safety warning should be showed only once, and not before every demo</li>
+	<li>Fullscreen mode is launched either by double clicking, ctrl+f, or f - it should be consistent</li>
+</ul>
+
+<h2>Help and contact</h2>
+
+<ul>
+	<li><a href="mailto:andrzej.mazur@end3r.com">Andrzej Mazur</a></li>
+	<li><a href="mailto:jcarpenter@mozilla.com">Josh Carpenter</a></li>
+	<li>#vr channel on irc.mozilla.org</li>
+</ul>
+
+<p>You can also go back to the Content Kit's <a href="https://end3r.github.io/WebVR-Content-Kit/">index</a> page.</p>
+
+</body>
+</html>
